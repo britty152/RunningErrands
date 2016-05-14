@@ -11,4 +11,20 @@ package runningerrands.model;
  */
 public class Game {
     
+    
+    private int totalTime; //game time is in minutes
+    private GameCharacter gameCharacter;
+    
+    public int getTotalTime() {
+        return totalTime;
+    }
+    
+    public void setTotalTime(int totalTime) {
+        this.totalTime = totalTime;
+    }
+    
+    //Need function that creates character? aka Calls gameCharacter constructor
+    
+    public GameCharacter getGame
+    
 }

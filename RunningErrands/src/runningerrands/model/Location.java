@@ -37,8 +37,6 @@ public class Location {
    
    public void setVisited(boolean visited) {
        this.visited = visited;
-   }
-   
-   
+   } 
     
 }

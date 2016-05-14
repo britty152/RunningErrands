@@ -27,7 +27,7 @@ public class RunningErrands {
        String playerInfo = playerOne.toString();
        System.out.println(playerInfo);
        
-       
+
     }
     
 }

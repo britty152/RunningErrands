@@ -3,20 +3,20 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package runningerrandsgame;
+package runningerrands.model;
 import java.io.Serializable;
 import java.util.Objects;
 /**
  *
  * @author brittanyhuntington
  */
-public class gameCharacter implements Serializable {
+public class GameCharacter implements Serializable {
     private String gameCharacterName;
     private String gender;
     private String job;
     private double coordinates; 
 
-    public gameCharacter() {
+    public GameCharacter() {
     }
 
     
@@ -74,7 +74,7 @@ public class gameCharacter implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final gameCharacter other = (gameCharacter) obj;
+        final GameCharacter other = (GameCharacter) obj;
         if (Double.doubleToLongBits(this.coordinates) != Double.doubleToLongBits(other.coordinates)) {
             return false;
         }
