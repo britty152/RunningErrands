@@ -3,32 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package runningerrands;
-
+package runningerrandsgame;
 /**
  *
  * @author brittanyhuntington
  */
-public class Player implements Serializable {
-     private String name;
-     private double bestScore;
-     
-     public String getName(){
-         return name;
-     }
-     public void setName(String name) {
-         this.name = name;
-     }
-     public double getBestScore(){
-         return bestScore;
-     }
-     public void setBestScore(double bestScore) {
-         this.bestScore = bestScore; 
-         
-}
+public class RunningErrandsGame {
 
+    /**
+     * @param args the command line arguments
+     */
     public static void main(String[] args) {
-        // TODO code application logic here
+       Player playerOne = new Player();
+       
+       playerOne.setName("Leonardo Turtle");
+       playerOne.setBestScore(900);
+       
+       String playerInfo = playerOne.toString();
+       System.out.println(playerInfo);
+       
+       
     }
     
 }
+
