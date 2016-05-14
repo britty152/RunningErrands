@@ -3,12 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package runningerrandsgame;
+package runningerrands;
+
+import runningerrandsgame.Player;
+
 /**
  *
  * @author brittanyhuntington
  */
-public class RunningErrandsGame {
+
+        
+public class RunningErrands {
 
     /**
      * @param args the command line arguments
