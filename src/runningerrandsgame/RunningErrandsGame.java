@@ -22,7 +22,20 @@ public class RunningErrandsGame {
        String playerInfo = playerOne.toString();
        System.out.println(playerInfo);
        
+       Car carOne = new Car();
+       
+       carOne.setDescription("Green");
+       carOne.setFuelEfficency(32);
+       carOne.setMaxCapacity(3);
+       
+       String carInfo = carOne.toString();
+       System.out.println(carInfo);
        
     }
-    
+       gameCharacter characterOne = new gameCharacter();
+       characterOne.setGameCharacterName("Linda Martin");
+       characterOne.setGender("Female");
+       characterOne.setJob("Nurse");
+       characterOne.setCoordinates(34);
+       
 }
