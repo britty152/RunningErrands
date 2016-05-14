@@ -18,12 +18,12 @@ public class Map {
         return rowCount;
     }
     
-    public int getColumnCount() {
-        return columnCount;
-    }
-    
     public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
+    }
+    
+    public int getColumnCount() {
+        return columnCount;
     }
     
     public void setColumnCount(int columnCount) {
