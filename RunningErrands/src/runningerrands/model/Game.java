@@ -25,6 +25,12 @@ public class Game {
     
     //Need function that creates character? aka Calls gameCharacter constructor
     
-    public GameCharacter getGame
+    public GameCharacter getGameCharacter() {
+        return gameCharacter;
+    }
+    
+    public void setGameCharacter (GameCharacter gameCharacter) {
+        this.gameCharacter = gameCharacter;
+    }
     
 }
