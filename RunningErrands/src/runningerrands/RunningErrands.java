@@ -5,7 +5,7 @@
  */
 package runningerrands;
 
-import runningerrandsgame.Player;
+import runningerrands.controller.TravelControl;
 
 /**
  *
@@ -19,15 +19,8 @@ public class RunningErrands {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       Player playerOne = new Player();
-       
-       playerOne.setName("Leonardo Turtle");
-       playerOne.setBestScore(900);
-       
-       String playerInfo = playerOne.toString();
-       System.out.println(playerInfo);
-       
-
+       TravelControl travelControl = new TravelControl();
+       System.out.println(travelControl.calculateDistance(4, 3, 4, 3));
     }
     
 }

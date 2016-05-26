@@ -16,11 +16,15 @@ public class Location implements Serializable {
     private int row;
     private int column;
     private boolean visited;
+    private double openingTime;
+    private double closingTime;
 
-    public Location(int row, int column) {
+    public Location(int row, int column, double openingTime, double closingTime) {
         this.row = row;
         this.column = column;
         visited = false;
+        this.openingTime = openingTime;
+        this.closingTime = closingTime;
     }
    
    public int getRow() {
@@ -46,6 +50,16 @@ public class Location implements Serializable {
    public void setVisited(boolean visited) {
        this.visited = visited;
    }
+
+    public double getOpeningTime() {
+        return openingTime;
+    }
+
+    public double getClosingTime() {
+        return closingTime;
+    }
+   
+   
 
     @Override
     public int hashCode() {
