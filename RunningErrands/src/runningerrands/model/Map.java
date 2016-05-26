@@ -15,16 +15,18 @@ public class Map implements Serializable {
     
     private int rowCount;
     private int columnCount;
+    Location [] locations;
 
-    public Map(int rowCount, int columnCount) {
+    public Map(int rowCount, int columnCount, Location[] locations) {
         this.rowCount = rowCount;
         this.columnCount = columnCount;
+        this.locations = locations;
     }
     
     public int getRowCount() {
         return rowCount;
     }
-    
+
     public void setRowCount(int rowCount) {
         this.rowCount = rowCount;
     }
@@ -36,6 +38,15 @@ public class Map implements Serializable {
     public void setColumnCount(int columnCount) {
         this.columnCount = columnCount;
     }
+    
+    public Location[] getLocations() {
+        return locations;
+    }
+
+    public void setLocations(Location[] locations) {
+        this.locations = locations;
+    }
+    
 
     @Override
     public int hashCode() {

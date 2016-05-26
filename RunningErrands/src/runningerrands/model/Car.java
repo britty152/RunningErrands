@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package runningerrandsgame;
+package runningerrands.model;
 import java.io.Serializable;
 import java.util.Objects;
 /**
@@ -11,21 +11,26 @@ import java.util.Objects;
  * @author brittanyhuntington
  */
 public class Car implements Serializable {
-        private String description;
+        private String carName;
         private double fuelEfficency;
-        private double maxCapacity;
+        private double fuelCapacity;
+        private double fuelAmount;
+        private int passengerCapacity;
 
-    public Car() {
+    public Car(String carName, double fuelEfficency, double fuelCapacity, double fuelAmount, int passengerCapacity) {
+        this.carName = carName;
+        this.fuelEfficency = fuelEfficency;
+        this.fuelCapacity = fuelCapacity;
+        this.fuelAmount = fuelAmount;
+        this.passengerCapacity = passengerCapacity;
     }
 
-        
-        
-    public String getDescription() {
-        return description;
+    public String getCarName() {
+        return carName;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setCarName(String carName) {
+        this.carName = carName;
     }
 
     public double getFuelEfficency() {
@@ -36,20 +41,39 @@ public class Car implements Serializable {
         this.fuelEfficency = fuelEfficency;
     }
 
-    public double getMaxCapacity() {
-        return maxCapacity;
+    public double getFuelCapacity() {
+        return fuelCapacity;
     }
 
-    public void setMaxCapacity(double maxCapacity) {
-        this.maxCapacity = maxCapacity;
+    public void setFuelCapacity(double fuelCapacity) {
+        this.fuelCapacity = fuelCapacity;
     }
+
+    public double getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public void setFuelAmount(double fuelAmount) {
+        this.fuelAmount = fuelAmount;
+    }
+
+    public int getPassengerCapacity() {
+        return passengerCapacity;
+    }
+
+    public void setPassengerCapacity(int passengerCapacity) {
+        this.passengerCapacity = passengerCapacity;
+    }
+
 
     @Override
     public int hashCode() {
-        int hash = 7;
-        hash = 11 * hash + Objects.hashCode(this.description);
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.fuelEfficency) ^ (Double.doubleToLongBits(this.fuelEfficency) >>> 32));
-        hash = 11 * hash + (int) (Double.doubleToLongBits(this.maxCapacity) ^ (Double.doubleToLongBits(this.maxCapacity) >>> 32));
+        int hash = 5;
+        hash = 37 * hash + Objects.hashCode(this.carName);
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.fuelEfficency) ^ (Double.doubleToLongBits(this.fuelEfficency) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.fuelCapacity) ^ (Double.doubleToLongBits(this.fuelCapacity) >>> 32));
+        hash = 37 * hash + (int) (Double.doubleToLongBits(this.fuelAmount) ^ (Double.doubleToLongBits(this.fuelAmount) >>> 32));
+        hash = 37 * hash + this.passengerCapacity;
         return hash;
     }
 
@@ -68,10 +92,16 @@ public class Car implements Serializable {
         if (Double.doubleToLongBits(this.fuelEfficency) != Double.doubleToLongBits(other.fuelEfficency)) {
             return false;
         }
-        if (Double.doubleToLongBits(this.maxCapacity) != Double.doubleToLongBits(other.maxCapacity)) {
+        if (Double.doubleToLongBits(this.fuelCapacity) != Double.doubleToLongBits(other.fuelCapacity)) {
             return false;
         }
-        if (!Objects.equals(this.description, other.description)) {
+        if (Double.doubleToLongBits(this.fuelAmount) != Double.doubleToLongBits(other.fuelAmount)) {
+            return false;
+        }
+        if (this.passengerCapacity != other.passengerCapacity) {
+            return false;
+        }
+        if (!Objects.equals(this.carName, other.carName)) {
             return false;
         }
         return true;
@@ -79,10 +109,8 @@ public class Car implements Serializable {
 
     @Override
     public String toString() {
-        return "Car{" + "description=" + description + ", fuelEfficency=" + fuelEfficency + ", maxCapacity=" + maxCapacity + '}';
+        return "Car{" + "carName=" + carName + ", fuelEfficency=" + fuelEfficency + ", fuelCapacity=" + fuelCapacity + ", fuelAmount=" + fuelAmount + ", passengerCapacity=" + passengerCapacity + '}';
     }
-     
-    
-    
-        
+
+            
 }

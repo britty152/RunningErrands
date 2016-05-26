@@ -14,37 +14,46 @@ import java.util.Objects;
  */
 public class Game implements Serializable {
     
-    private int totalTime; //game time is in minutes
-    private GameCharacter gameCharacter;
+    private double totalTime;
+    private Player player;
+    private Map map;
 
-    public Game(int totalTime, GameCharacter gameCharacter) {
+    public Game(double totalTime, Player player, Map map) {
         this.totalTime = totalTime;
-        this.gameCharacter = gameCharacter;
+        this.player = player;
+        this.map = map;
     }
-    
-    public int getTotalTime() {
+
+    public double getTotalTime() {
         return totalTime;
     }
-    
-    public void setTotalTime(int totalTime) {
+
+    public void setTotalTime(double totalTime) {
         this.totalTime = totalTime;
     }
-    
-    //Need function that creates character? aka Calls gameCharacter constructor
-    
-    public GameCharacter getGameCharacter() {
-        return gameCharacter;
-    }
-    
-    public void setGameCharacter (GameCharacter gameCharacter) {
-        this.gameCharacter = gameCharacter;
+
+    public Player getPlayer() {
+        return player;
     }
 
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public Map getMap() {
+        return map;
+    }
+
+    public void setMap(Map map) {
+        this.map = map;
+    }
+    
     @Override
     public int hashCode() {
-        int hash = 3;
-        hash = 83 * hash + this.totalTime;
-        hash = 83 * hash + Objects.hashCode(this.gameCharacter);
+        int hash = 7;
+        hash = 53 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
+        hash = 53 * hash + Objects.hashCode(this.player);
+        hash = 53 * hash + Objects.hashCode(this.map);
         return hash;
     }
 
@@ -60,10 +69,13 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (this.totalTime != other.totalTime) {
+        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
             return false;
         }
-        if (!Objects.equals(this.gameCharacter, other.gameCharacter)) {
+        if (!Objects.equals(this.player, other.player)) {
+            return false;
+        }
+        if (!Objects.equals(this.map, other.map)) {
             return false;
         }
         return true;
@@ -71,9 +83,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", gameCharacter=" + gameCharacter + '}';
+        return "Game{" + "totalTime=" + totalTime + ", player=" + player + ", map=" + map + '}';
     }
-    
-    
-    
+      
 }

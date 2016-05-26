@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package runningerrandsgame;
+package runningerrands.model;
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -14,12 +14,18 @@ import java.util.Objects;
 public class Player implements Serializable {
     
     private String name;
-    private double bestScore;
+    private double accountBalance;
+    private String job;
+    private Location currentLocation;
+    private Car car;
 
-    public Player() {
+    public Player(String name, double accountBalance, String job, Location currentLocation, Car car) {
+        this.name = name;
+        this.accountBalance = accountBalance;
+        this.job = job;
+        this.currentLocation = currentLocation;
+        this.car = car;
     }
-    
-    
 
     public String getName() {
         return name;
@@ -29,19 +35,46 @@ public class Player implements Serializable {
         this.name = name;
     }
 
-    public double getBestScore() {
-        return bestScore;
+    public double getAccountBalance() {
+        return accountBalance;
     }
 
-    public void setBestScore(double bestScore) {
-        this.bestScore = bestScore;
+    public void setAccountBalance(double accountBalance) {
+        this.accountBalance = accountBalance;
+    }
+
+    public String getJob() {
+        return job;
+    }
+
+    public void setJob(String job) {
+        this.job = job;
+    }
+
+    public Location getCurrentLocation() {
+        return currentLocation;
+    }
+
+    public void setCurrentLocation(Location currentLocation) {
+        this.currentLocation = currentLocation;
+    }
+
+    public Car getCar() {
+        return car;
+    }
+
+    public void setCar(Car car) {
+        this.car = car;
     }
 
     @Override
     public int hashCode() {
-        int hash = 3;
+        int hash = 5;
         hash = 53 * hash + Objects.hashCode(this.name);
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.bestScore) ^ (Double.doubleToLongBits(this.bestScore) >>> 32));
+        hash = 53 * hash + (int) (Double.doubleToLongBits(this.accountBalance) ^ (Double.doubleToLongBits(this.accountBalance) >>> 32));
+        hash = 53 * hash + Objects.hashCode(this.job);
+        hash = 53 * hash + Objects.hashCode(this.currentLocation);
+        hash = 53 * hash + Objects.hashCode(this.car);
         return hash;
     }
 
@@ -57,10 +90,19 @@ public class Player implements Serializable {
             return false;
         }
         final Player other = (Player) obj;
-        if (Double.doubleToLongBits(this.bestScore) != Double.doubleToLongBits(other.bestScore)) {
+        if (Double.doubleToLongBits(this.accountBalance) != Double.doubleToLongBits(other.accountBalance)) {
             return false;
         }
         if (!Objects.equals(this.name, other.name)) {
+            return false;
+        }
+        if (!Objects.equals(this.job, other.job)) {
+            return false;
+        }
+        if (!Objects.equals(this.currentLocation, other.currentLocation)) {
+            return false;
+        }
+        if (!Objects.equals(this.car, other.car)) {
             return false;
         }
         return true;
@@ -68,7 +110,8 @@ public class Player implements Serializable {
 
     @Override
     public String toString() {
-        return "Player{" + "name=" + name + ", bestScore=" + bestScore + '}';
+        return "Player{" + "name=" + name + ", accountBalance=" + accountBalance + ", job=" + job + ", currentLocation=" + currentLocation + ", car=" + car + '}';
     }
+        
     
 }
