@@ -47,7 +47,7 @@ public class TravelControl {
     }
     
     public boolean canTravel (Location location1, Location location2, double timeOfDay) {
-        return true;
+        return false;
     }
     
     public double travelTime(double timeOfDay, int distance) {
