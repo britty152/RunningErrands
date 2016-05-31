@@ -5,8 +5,8 @@
  */
 package runningerrands.controller;
 
-import runningerrands.model.Car;
-import runningerrands.model.Location;
+//import runningerrands.model.Car;
+//import runningerrands.model.Location;
 
 /**
  *
@@ -103,19 +103,4 @@ public class TravelControl {
             return false; 
         }
     }
-
-    boolean canTravel(Location location1, Location location2, double timeOfDay) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    boolean canTravel(Location location1, Location location2, double timeOfDay) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-   
-    
-    
-    
-    
-    
 }
