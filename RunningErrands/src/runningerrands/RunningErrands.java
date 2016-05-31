@@ -20,7 +20,7 @@ public class RunningErrands {
      */
     public static void main(String[] args) {
        TravelControl travelControl = new TravelControl();
-       System.out.println(travelControl.calculateDistance(4, 3, 4, 3));
+       System.out.println(travelControl.canTravel(true, 17.0, 19.0));
     }
     
 }

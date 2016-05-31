@@ -21,7 +21,7 @@ public class TravelControl {
     private static final int NUM_OF_COLUMNS = 25;
     
     public int calculateDistance (int row1, int col1, int row2, int col2) {
-        int totalDistance = 0;
+        int totalDistance;
         if (row1 < 0 || row1 > NUM_OF_ROWS - 1) {
             totalDistance = -1;
         }
@@ -42,21 +42,80 @@ public class TravelControl {
        return totalDistance; 
     }
     
-    public double calculateFuelRequired (int distance, Car car) {
-        return 0;
+    public double calculateFuelRequired (double distance, double fuelEfficency) {
+        double fuelRequired; 
+        if (fuelEfficency <= 0) {
+            fuelRequired = 0; 
+        }
+        else if (distance  <= 0) {
+            fuelRequired = 0; 
+        }
+        else {
+            fuelRequired =  distance / fuelEfficency; 
+        }
+        return fuelRequired;
     }
     
-    public boolean canTravel (Location location1, Location location2, double timeOfDay) {
-        return false;
+    /**
+     *
+     * @param timeOfDay
+     * @param location
+     * @return
+     */
+    public boolean isOpen (double timeOfDay, double location) {
+       String open; 
+        if (location > timeOfDay){
+           open = "Not open";
+           return false; 
+       }
+       else {
+           open = "Open";
+           return true; 
+       }
     }
     
+   
     public double travelTime(double timeOfDay, int distance) {
-        return 0;
+        double time;  //rush hour will be from 1630 to 1800
+        if (timeOfDay <= 16.0) {
+            time = distance + timeOfDay;
+            return time; 
+        }
+        else if (timeOfDay >= 16.5 && timeOfDay <= 18.0) {
+            time = distance + timeOfDay + 15.0; //this is calculating the extra time it will take for rush hour
+            return time; 
+        }
+        else {
+            time = distance + timeOfDay; 
+            return time; 
+        }
+        
     }
+     public boolean canTravel (boolean isOpen, double travelTime, double openHours) { //this shoudl use travelTime and isOpen to make sure player will get there in time for cloing
+        
+        if (travelTime <= openHours || isOpen == true) {
+            return true;
+        }
+        else if (travelTime > openHours || isOpen == false){
+            return false;
+        }
+        else {
+            return false; 
+        }
+    }
+
+    boolean canTravel(Location location1, Location location2, double timeOfDay) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    boolean canTravel(Location location1, Location location2, double timeOfDay) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+   
     
-    public boolean isOpen (double timeOfDay, Location location) {
-        return true;
-    }
+    
+    
     
     
 }
