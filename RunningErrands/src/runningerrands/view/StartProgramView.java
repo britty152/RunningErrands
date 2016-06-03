@@ -74,7 +74,7 @@ public class StartProgramView {
         }
         Player player = GameControl.createNewPlayer(playersName);
         if (player == null) {
-            System.out.println("\nError creting the player.");
+            System.out.println("\nError creating the player.");
             return false;
         }
         this.displayNextView(player);
