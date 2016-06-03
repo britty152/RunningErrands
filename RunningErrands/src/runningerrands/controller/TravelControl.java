@@ -63,13 +63,11 @@ public class TravelControl {
      * @return
      */
     public boolean isOpen (double timeOfDay, double location) {
-       String open; 
+      
         if (location > timeOfDay){
-           open = "Not open";
            return false; 
        }
        else {
-           open = "Open";
            return true; 
        }
     }
@@ -91,7 +89,7 @@ public class TravelControl {
         }
         
     }
-     public boolean canTravel (boolean isOpen, double travelTime, double openHours) { //this shoudl use travelTime and isOpen to make sure player will get there in time for cloing
+     public boolean canTravel (boolean isOpen, double travelTime, double openHours) { //this should use travelTime and isOpen to make sure player will get there in time for cloing
         
         if (travelTime <= openHours || isOpen == true) {
             return true;
