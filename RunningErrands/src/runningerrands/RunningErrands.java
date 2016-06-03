@@ -6,6 +6,7 @@
 package runningerrands;
 
 import runningerrands.controller.TravelControl;
+import runningerrands.view.StartProgramView;
 
 /**
  *
@@ -19,8 +20,8 @@ public class RunningErrands {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-       TravelControl travelControl = new TravelControl();
-       System.out.println(travelControl.canTravel(true, 17.0, 19.0));
+       StartProgramView object = new StartProgramView(); 
+       object.displayStartProgramView();
     }
     
 }
