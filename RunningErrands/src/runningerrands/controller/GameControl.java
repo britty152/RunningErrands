@@ -24,7 +24,9 @@ public class GameControl {
     public void retrieveSavedGame(Player player) {
     }
     
-    public void createNewPlayer() {
+    public static Player createNewPlayer(String playersName) {
+        Player object = null;
+        return object;
     }
     
     public void assignPlayerRole(String role, Player player) {
