@@ -15,26 +15,23 @@ public class StartProgramView {
    private String promptMessage; 
     
     public StartProgramView() {
-        this.promptMessage = "Please enter your name: "; 
-        
+        this.promptMessage = "Please enter your name: ";
         this.displayBanner();
    }
+    
     public void displayStartProgramView() {
         boolean done = false;
+        
         do {
             String playersName = this.getPlayersName(); 
-            if (playersName.toUpperCase().equals("Q")) {
+            if (playersName.toUpperCase().equals("Q"))
                 return; 
-            }
+  
             done = this.doAction(playersName);
-        } while (!done);
-      
-            
+        } while (!done);      
     }
-        
-        //print banner page, get player's name, player object, display welcome message and main menu on success
        
-   
+  
     private void displayBanner() {
         System.out.println("*********************************************************************************\n"
                 + "***********************          RUNNING ERRANDS          ***********************\n"
@@ -54,34 +51,49 @@ public class StartProgramView {
        Scanner input = new Scanner(System.in);
        String value = "";
        boolean valid = false;
+       
        while (!valid) {
            System.out.println("\n" + this.promptMessage);
            value = input.nextLine();
            value = value.trim();
+           
            if (value.length() < 1) {
                System.out.println("\nInvalid Value: Value cannot be blank.");
                continue;
            }
+           
            break;
        }
        return value;
     }
 
     private boolean doAction(String playersName) {
+        
         if (playersName.length() < 2) {
             System.out.println("\nInvalid Players Name: Name must be greater than one character in length.");
             return false;
         }
-        Player player = GameControl.createNewPlayer(playersName);
+        
+        Player player = GameControl.createPlayer(playersName);
+        
         if (player == null) {
             System.out.println("\nError creating the player.");
             return false;
         }
+        
         this.displayNextView(player);
+        
         return true; 
     }
 
     private void displayNextView(Player player) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        System.out.println("\n\n*********************************************************************************\n"
+        + "Welcome to the game " + player.getName() + "\n"
+        + "We hope you have a lot of fun!!\n" 
+        + "*********************************************************************************\n");
+        
+        MainMenuView mainMenuView = new MainMenuView();
+        
+        mainMenuView.displayMainMenuView();
     }
 }

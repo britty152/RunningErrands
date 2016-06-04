@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package runningerrands.controller;
+import runningerrands.RunningErrands;
 import runningerrands.model.Player;
 
 /**
@@ -24,9 +25,16 @@ public class GameControl {
     public void retrieveSavedGame(Player player) {
     }
     
-    public static Player createNewPlayer(String playersName) {
-        Player object = null;
-        return object;
+    public static Player createPlayer(String playersName) {
+        if (playersName == null) {
+            return null;
+        }
+        Player player = new Player();
+        player.setName(playersName);
+        
+        RunningErrands.setPlayer(player);
+        
+        return player;
     }
     
     public void assignPlayerRole(String role, Player player) {

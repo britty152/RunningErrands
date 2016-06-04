@@ -5,7 +5,8 @@
  */
 package runningerrands;
 
-import runningerrands.controller.TravelControl;
+import runningerrands.model.Game;
+import runningerrands.model.Player;
 import runningerrands.view.StartProgramView;
 
 /**
@@ -15,6 +16,25 @@ import runningerrands.view.StartProgramView;
 
         
 public class RunningErrands {
+    
+    private static Game currentGame = null;
+    private static Player player = null;
+
+    public static Game getCurrentGame() {
+        return currentGame;
+    }
+
+    public static void setCurrentGame(Game currentGame) {
+        RunningErrands.currentGame = currentGame;
+    }
+
+    public static Player getPlayer() {
+        return player;
+    }
+
+    public static void setPlayer(Player player) {
+        RunningErrands.player = player;
+    }
 
     /**
      * @param args the command line arguments

@@ -18,6 +18,8 @@ public class Player implements Serializable {
     private String job;
     private Location currentLocation;
     private Car car;
+    
+    public Player () {}
 
     public Player(String name, double accountBalance, String job, Location currentLocation, Car car) {
         this.name = name;
