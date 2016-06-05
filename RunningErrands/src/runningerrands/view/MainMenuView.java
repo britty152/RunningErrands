@@ -6,6 +6,8 @@
 package runningerrands.view;
 
 import java.util.Scanner;
+import runningerrands.RunningErrands;
+import runningerrands.controller.GameControl;
 
 /**
  *
@@ -91,11 +93,14 @@ public class MainMenuView {
     }
 
     private void startNewGame() {
-        System.out.println("Start new game function called");
+        GameControl.createNewGame(RunningErrands.getPlayer());
+        
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     } 
 
     private void startExistingGame() {
-        System.out.println("Start existing game function called");
+        System.out.println("Start existing game stub function called");
     }
 
     private void displayHelpMenu() {
@@ -104,7 +109,7 @@ public class MainMenuView {
     }
 
     private void saveGame() {
-        System.out.println("Save game function called");
+        System.out.println("Save game stub function called");
     }
     
 }

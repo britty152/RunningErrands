@@ -90,18 +90,18 @@ public class HelpMenuView {
     }
 
     private void displayGameGoalHelp() {
-        System.out.println("Display game goal help function called");
+        System.out.println("Display game goal help stub function called");
     } 
 
     private void displayGameMovementHelp() {
-        System.out.println("Display game movement help function called");
+        System.out.println("Display game movement help stub function called");
     }
 
     private void displayAccountBalanceHelp() {
-        System.out.println("Display account balance help function called");
+        System.out.println("Display account balance help stub function called");
     }
 
     private void displayPurchaseHelp() {
-        System.out.println("Display purchase help function called");
+        System.out.println("Display purchase help stub function called");
     }
 }

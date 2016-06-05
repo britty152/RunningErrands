@@ -16,7 +16,8 @@ public class GameControl {
     public void saveGame (Player player) {
     }
     
-    public void startGame() {
+    public static void createNewGame(Player player) {
+        System.out.println("Create new game stub function called");
     }
     
     public void initializeMap() {

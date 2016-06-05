@@ -11,4 +11,10 @@ package runningerrands.view;
  */
 public class GameMenuView {
     
+    GameMenuView() {}
+    
+    public void displayMenu() {
+        System.out.println("Display game menu stub function called");
+    }
+    
 }
