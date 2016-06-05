@@ -11,30 +11,29 @@ import java.util.Scanner;
  *
  * @author kburkart
  */
-public class MainMenuView {
-    
+public class HelpMenuView {
     private String menu;
     
-    MainMenuView() {
+    HelpMenuView() {
         this.menu = "\n"
         + "*********************************************************************************\n"
-        + "MAIN MENU\n"
+        + "HELP MENU\n"
         + "*********************************************************************************\n"
-        + "N - Start new game\n"
-        + "G - Get and start saved game\n"
-        + "H - Get help on how to play the game\n"
-        + "S - Save game\n"
-        + "Q - Quit \n"    
+        + "G - What is the goal of the game?\n"
+        + "M - How to move\n"
+        + "A - How do I manage my account balance\n"
+        + "P - How do I purchase items and where can I purchase them\n"
+        + "B - Back to main menu\n"    
         + "*********************************************************************************\n";
     }
     
-    public void displayMainMenuView() {
+    public void displayHelpMenuView() {
         boolean done = false;
         
         do {
             String menuOption = this.getMenuOption();
             
-            if (menuOption.toUpperCase().equals("Q"))
+            if (menuOption.toUpperCase().equals("B"))
                 return;
             
             done = this.doAction(menuOption);
@@ -70,17 +69,17 @@ public class MainMenuView {
         
         switch(choice) {
             
-            case "N": 
-                this.startNewGame();
+            case "G": 
+                this.displayGameGoalHelp();
                 break;
-            case "G":
-                this.startExistingGame();
+            case "M":
+                this.displayGameMovementHelp();
                 break;
-            case "H": 
-                this.displayHelpMenu();
+            case "A": 
+                this.displayAccountBalanceHelp();
                 break;
-            case "S":
-                this.saveGame();
+            case "P":
+                this.displayPurchaseHelp();
                 break;
             default:
                 System.out.println("Invalid Selection. Try Again.");
@@ -90,21 +89,19 @@ public class MainMenuView {
         return false;
     }
 
-    private void startNewGame() {
-        System.out.println("Start new game function called");
+    private void displayGameGoalHelp() {
+        System.out.println("Display game goal help function called");
     } 
 
-    private void startExistingGame() {
-        System.out.println("Start existing game function called");
+    private void displayGameMovementHelp() {
+        System.out.println("Display game movement help function called");
     }
 
-    private void displayHelpMenu() {
-       HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.displayHelpMenuView();
+    private void displayAccountBalanceHelp() {
+        System.out.println("Display account balance help function called");
     }
 
-    private void saveGame() {
-        System.out.println("Save game function called");
+    private void displayPurchaseHelp() {
+        System.out.println("Display purchase help function called");
     }
-    
 }
