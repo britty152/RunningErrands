@@ -56,7 +56,7 @@ public class ChooseOccupationView {
                System.out.println("\nInvalid Value: Value cannot be blank.");
                continue;
             }
-           if (menuOption.length() != 1) {
+           else if (menuOption.length() != 1) {
                System.out.println("\nInvalid Value: Value must be a single character.");
                continue;
            }
