@@ -27,7 +27,7 @@ public class HelpMenuView {
         + "*********************************************************************************\n";
     }
     
-    public void displayHelpMenuView() {
+    public void displayMenu() {
         boolean done = false;
         
         do {

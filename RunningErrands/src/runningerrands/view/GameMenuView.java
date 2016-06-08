@@ -105,7 +105,7 @@ public class GameMenuView {
 
     private void displayMapMenu() {
        MapMenuView mapMenu = new MapMenuView();
-       MapMenuView.displayMapMenuView();
+       mapMenu.displayMenu();
     }
     
 }

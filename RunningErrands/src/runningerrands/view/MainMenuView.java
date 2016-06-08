@@ -105,7 +105,7 @@ public class MainMenuView {
 
     private void displayHelpMenu() {
        HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.displayHelpMenuView();
+       helpMenu.displayMenu();
     }
 
     private void saveGame() {
