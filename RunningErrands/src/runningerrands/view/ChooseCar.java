@@ -9,7 +9,7 @@ import java.util.Scanner;
  *
  * @author brittanyhuntington
  */
-public class ChooseCar {
+public class ChooseCarView {
    private String menu;
       
      ChooseCarView() {
