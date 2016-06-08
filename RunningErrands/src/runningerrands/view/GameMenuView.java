@@ -57,7 +57,7 @@ public class GameMenuView {
                System.out.println("\nInvalid Value: Value cannot be blank.");
                continue;
             }
-           if (menuOption.length() != 1) {
+           else if (menuOption.length() != 1) {
                System.out.println("\nInvalid Value: Value must be a single character.");
                continue;
            }
@@ -81,7 +81,7 @@ public class GameMenuView {
                 this.checkGasTank();
                 break;
             case "M":
-                this.showMap();
+                this.displayMapMenu();
                 break;
             default:
                 System.out.println("Invalid Selection. Try Again.");
@@ -103,8 +103,9 @@ public class GameMenuView {
         System.out.println("Check gas tank stub function called");
     }
 
-    private void showMap() {
-       System.out.println("Show map stub function called");
+    private void displayMapMenu() {
+       MapMenuView mapMenu = new MapMenuView();
+       MapMenuView.displayMapMenuView();
     }
     
 }
