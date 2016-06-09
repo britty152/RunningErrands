@@ -68,7 +68,7 @@ public class ChooseCarView {
         switch(choice) {
             
             case "S": 
-                this.displaySuv();
+                this.displaySUV();
                 break;
             case "C":
                 this.displayCompact();
@@ -90,7 +90,7 @@ public class ChooseCarView {
         return false;
     }
 
-    private void displaySuv() {
+    private void displaySUV() {
          System.out.println("Display SUV stub function called");
     }
 
@@ -111,5 +111,5 @@ public class ChooseCarView {
     }
 
    
-    }
+}
      
