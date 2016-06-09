@@ -41,6 +41,8 @@ public class ChooseOccupationView {
             done = this.doAction(menuOption);
 
         }while(!done);
+        
+        this.displayChooseCarView();
     }
 
     private String getMenuOption() {
@@ -100,7 +102,7 @@ public class ChooseOccupationView {
                 break;
         }
         System.out.println("You are a " + RunningErrands.getPlayer().getJob());
-        this.displayChooseCarView();
+
         return false;
     }
 
