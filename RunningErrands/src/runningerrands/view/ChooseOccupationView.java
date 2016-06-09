@@ -32,9 +32,9 @@ public class ChooseOccupationView {
     public void displayView() {
         boolean done = false;
 
-        
         do {
             String menuOption = this.getMenuOption();
+            
             if (menuOption.toUpperCase().equals("B"))
                 return;
             
@@ -75,35 +75,33 @@ public class ChooseOccupationView {
             
             case "J": 
                 RunningErrands.getPlayer().setJob("janitor");
-                break;
+                return true;
             case "M":
                 RunningErrands.getPlayer().setJob("mail clerk");
-                break;
+                return true;
             case "P": 
                 RunningErrands.getPlayer().setJob("pizza deliverer");
-                break;
+                return true;
             case "A":
                 RunningErrands.getPlayer().setJob("auto mechanic");
-                break;
+                return true;
              case "S":
                 RunningErrands.getPlayer().setJob("secretary");
-                break;
+                return true;
              case "N":
                 RunningErrands.getPlayer().setJob("nurse");
-                break;
+                return true;
              case "H":
                 RunningErrands.getPlayer().setJob("hair dresser");
-                break;
+                return true;
              case "T":
                 RunningErrands.getPlayer().setJob("teacher");
-                break;
+                return true;
             default:
                 System.out.println("Invalid Selection. Try Again.");
-                break;
+                return false;
         }
-        System.out.println("You are a " + RunningErrands.getPlayer().getJob());
 
-        return false;
     }
 
     private void displayChooseCarView() {

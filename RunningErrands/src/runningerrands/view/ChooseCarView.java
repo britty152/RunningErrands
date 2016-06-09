@@ -5,6 +5,8 @@
  */
 package runningerrands.view;
 import java.util.Scanner;
+import runningerrands.RunningErrands;
+import runningerrands.model.Car;
 /**
  *
  * @author brittanyhuntington
@@ -37,6 +39,8 @@ public class ChooseCarView {
             done = this.doAction(menuOption);
 
         }while(!done);
+        
+        this.displayGameMenuView();
     }
 
     private String getMenuOption() {
@@ -64,50 +68,35 @@ public class ChooseCarView {
 
     private boolean doAction(String choice) {
       choice = choice.toUpperCase();
+      Car car = new Car();
+      RunningErrands.getPlayer().setCar(car);
         
         switch(choice) {
             
             case "S": 
-                this.displaySUV();
-                break;
+                RunningErrands.getPlayer().getCar().setCarName("SUV");
+                return true;
             case "C":
-                this.displayCompact();
-                break;
+                RunningErrands.getPlayer().getCar().setCarName("compact");
+                return true;
             case "V": 
-                this.displayVan();
-                break;
+                RunningErrands.getPlayer().getCar().setCarName("van");
+                return true;
             case "T":
-                this.displayTruck();
-                break;
+                RunningErrands.getPlayer().getCar().setCarName("truck");
+                return true;
              case "H":
-                this.displayHybrid();
-                break;
+                RunningErrands.getPlayer().getCar().setCarName("hybrid");
+                return true;
             default:
                 System.out.println("Invalid Selection. Try Again.");
-                break;
+                return false;
         }
-        
-        return false;
     }
 
-    private void displaySUV() {
-         System.out.println("Display SUV stub function called");
-    }
-
-    private void displayCompact() {
-        System.out.println("Display Compact stub function called");
-    }
-
-    private void displayVan() {
-       System.out.println("Display Van stub function called");
-    }
-
-    private void displayTruck() {
-        System.out.println("Display Truck stub function called");
-    }
-
-    private void displayHybrid() {
-        System.out.println("Display Hybrid stub function called");
+    private void displayGameMenuView() {
+        GameMenuView gameMenu = new GameMenuView();
+        gameMenu.displayMenu();
     }
 
    

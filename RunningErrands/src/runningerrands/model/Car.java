@@ -9,6 +9,8 @@ import java.util.Objects;
 /**
  *
  * @author brittanyhuntington
+ * 
+ * 
  */
 public class Car implements Serializable {
         private String carName;
@@ -16,6 +18,8 @@ public class Car implements Serializable {
         private double fuelCapacity;
         private double fuelAmount;
         private int passengerCapacity;
+        
+    public Car() {}
 
     public Car(String carName, double fuelEfficency, double fuelCapacity, double fuelAmount, int passengerCapacity) {
         this.carName = carName;
