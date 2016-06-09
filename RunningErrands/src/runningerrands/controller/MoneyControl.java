@@ -17,7 +17,7 @@ public class MoneyControl {
     private static final double JANITOR_WAGE = 7.75;
     private static final double MAIL_CLERK_WAGE = 10.75;
     private static final double PIZZA_DELIVERER_WAGE = 7.5;
-    private static final double MECHANIC_WAGE = 12.5;
+    private static final double AUTO_MECHANIC_WAGE = 12.5;
     private static final double SECRETARY_WAGE = 11;
     private static final double NURSE_WAGE = 20.25;
     private static final double HAIR_DRESSER_WAGE = 13.5;
@@ -49,8 +49,8 @@ public class MoneyControl {
             else if (player.getJob().equals("pizza deliverer")) {
                 paycheckAmount = hoursWorked * PIZZA_DELIVERER_WAGE;
             }
-            else if (player.getJob().equals("mechanic")) {
-                paycheckAmount = hoursWorked * MECHANIC_WAGE;
+            else if (player.getJob().equals("auto mechanic")) {
+                paycheckAmount = hoursWorked * AUTO_MECHANIC_WAGE;
             }
             else if (player.getJob().equals("secretary")) {
                 paycheckAmount = hoursWorked * SECRETARY_WAGE;

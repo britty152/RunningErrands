@@ -5,6 +5,7 @@
  */
 package runningerrands.view;
 import java.util.Scanner;
+import runningerrands.RunningErrands;
 /**
  *
  * @author brittanyhuntington
@@ -24,16 +25,16 @@ public class ChooseOccupationView {
         + "S - Secretary\n"
         + "N - Nurse\n"
         + "H - Hair Dresser\n"
-        + "T - Teacher"
+        + "T - Teacher\n"
         + "B - Back to main menu\n"    
         + "*********************************************************************************\n";
     }
-    public void displayChooseOccupationView() {
+    public void displayView() {
         boolean done = false;
+
         
         do {
             String menuOption = this.getMenuOption();
-            
             if (menuOption.toUpperCase().equals("B"))
                 return;
             
@@ -71,66 +72,40 @@ public class ChooseOccupationView {
         switch(choice) {
             
             case "J": 
-                this.displayJanitor();
+                RunningErrands.getPlayer().setJob("janitor");
                 break;
             case "M":
-                this.displayMailClerk();
+                RunningErrands.getPlayer().setJob("mail clerk");
                 break;
             case "P": 
-                this.displayPizzaDeliveryDriver();
+                RunningErrands.getPlayer().setJob("pizza deliverer");
                 break;
             case "A":
-                this.displayMechanic();
+                RunningErrands.getPlayer().setJob("auto mechanic");
                 break;
              case "S":
-                this.displaySecretary();
+                RunningErrands.getPlayer().setJob("secretary");
                 break;
              case "N":
-                this.displayNurse();
+                RunningErrands.getPlayer().setJob("nurse");
                 break;
              case "H":
-                this.displayHairDresser();
+                RunningErrands.getPlayer().setJob("hair dresser");
                 break;
              case "T":
-                this.displayTeacher();
+                RunningErrands.getPlayer().setJob("teacher");
                 break;
             default:
                 System.out.println("Invalid Selection. Try Again.");
                 break;
         }
-        
+        System.out.println("You are a " + RunningErrands.getPlayer().getJob());
+        this.displayChooseCarView();
         return false;
     }
 
-    private void displayJanitor() {
-        System.out.println("Display Janitor stub function called");
-    }
-
-    private void displayMailClerk() {
-        System.out.println("Display Mail Clerk stub function called");
-    }
-
-    private void displayPizzaDeliveryDriver() {
-       System.out.println("Display Pizza Delivery Driver stub function called");
-    }
-
-    private void displayMechanic() {
-        System.out.println("Display Mechanic stub function called");
-    }
-
-    private void displaySecretary() {
-       System.out.println("Display Secretary  stub function called");  
-    }
-
-    private void displayNurse() {
-        System.out.println("Display Nurse stub function called");
-    }
-
-    private void displayHairDresser() {
-       System.out.println("Display Hair Dresser stub function called"); 
-    }
-
-    private void displayTeacher() {
-      System.out.println("Display Teacher stub function called");
+    private void displayChooseCarView() {
+        ChooseCarView chooseCar = new ChooseCarView();
+        chooseCar.displayView();
     }
 }

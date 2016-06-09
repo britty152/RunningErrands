@@ -95,8 +95,8 @@ public class MainMenuView {
     private void startNewGame() {
         GameControl.createNewGame(RunningErrands.getPlayer());
         
-        GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        ChooseOccupationView chooseOccupation = new ChooseOccupationView();
+        chooseOccupation.displayView();
     } 
 
     private void startExistingGame() {

@@ -25,7 +25,7 @@ public class ChooseCarView {
         + "B - Back to main menu\n"    
         + "*********************************************************************************\n";
     }
-    public void displayChooseCarView() {
+    public void displayView() {
         boolean done = false;
         
         do {
