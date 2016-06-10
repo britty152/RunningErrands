@@ -29,7 +29,7 @@ public class TravelControlTest {
         int row2 = 5;
         int col2 = 7;
         TravelControl instance = new TravelControl();
-        int expResult = 3;
+        int expResult = 7;
         int result = instance.calculateDistance(row1, col1, row2, col2);
         assertEquals(expResult, result);
      
@@ -59,7 +59,7 @@ public class TravelControlTest {
         double timeOfDay = 12.0;
         double location = 19.0;
         TravelControl instance = new TravelControl();
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = instance.isOpen(timeOfDay, location);
         assertEquals(expResult, result);
     }
@@ -93,21 +93,7 @@ public class TravelControlTest {
         assertEquals(expResult, result);
     }
 
-    /**
-     * Test of canTravel method, of class TravelControl.
-     */
-    @Test
-    public void testCanTravel_3args_2() {
-        System.out.println("canTravel");
-        Location location1 = null;
-        Location location2 = null;
-        double timeOfDay = 0.0;
-        TravelControl instance = new TravelControl();
-        boolean expResult = false;
-        boolean result = false;
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+   
+    
     
 }
