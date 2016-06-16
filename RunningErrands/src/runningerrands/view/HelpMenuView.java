@@ -11,11 +11,10 @@ import java.util.Scanner;
  *
  * @author kburkart
  */
-public class HelpMenuView {
-    private String menu;
+public class HelpMenuView extends View {
     
     HelpMenuView() {
-        this.menu = "\n"
+        super ("\n"
         + "*********************************************************************************\n"
         + "HELP MENU\n"
         + "*********************************************************************************\n"
@@ -23,48 +22,12 @@ public class HelpMenuView {
         + "M - How to move\n"
         + "A - How do I manage my account balance\n"
         + "P - How do I purchase items and where can I purchase them\n"
-        + "B - Back to main menu\n"    
-        + "*********************************************************************************\n";
+        + "Q - Back to main menu\n"    
+        + "*********************************************************************************\n");
     }
     
-    public void displayMenu() {
-        boolean done = false;
-        
-        do {
-            String menuOption = this.getMenuOption();
-            
-            if (menuOption.toUpperCase().equals("B"))
-                return;
-            
-            done = this.doAction(menuOption);
-
-        }while(!done);
-    }
-
-    private String getMenuOption() {
-        Scanner input = new Scanner(System.in);
-       String menuOption = "";
-       boolean valid = false;
-       
-       while(!valid) {
-           System.out.println("\n" + this.menu);
-           menuOption = input.nextLine();
-           menuOption = menuOption.trim();
-           
-           if (menuOption.length() < 1) {
-               System.out.println("\nInvalid Value: Value cannot be blank.");
-               continue;
-            }
-           if (menuOption.length() != 1) {
-               System.out.println("\nInvalid Value: Value must be a single character.");
-               continue;
-           }
-          break;        
-       }
-        return menuOption;
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch(choice) {

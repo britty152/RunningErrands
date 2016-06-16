@@ -24,7 +24,7 @@ public class ChooseCarView {
         + "V - Van\n"
         + "T - Truck\n"
         + "H - Hybrid\n"
-        + "B - Back to main menu\n"    
+        + "Q - Back to main menu\n"    
         + "*********************************************************************************\n";
     }
     public void displayView() {
@@ -33,7 +33,7 @@ public class ChooseCarView {
         do {
             String menuOption = this.getMenuOption();
             
-            if (menuOption.toUpperCase().equals("B"))
+            if (menuOption.toUpperCase().equals("Q"))
                 return;
             
             done = this.doAction(menuOption);
@@ -96,7 +96,7 @@ public class ChooseCarView {
 
     private void displayGameMenuView() {
         GameMenuView gameMenu = new GameMenuView();
-        gameMenu.displayMenu();
+        gameMenu.display();
     }
 
    

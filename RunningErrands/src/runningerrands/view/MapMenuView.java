@@ -11,12 +11,10 @@ import java.util.Scanner;
  *
  * @author kburkart
  */
-public class MapMenuView {
-    
-    private String menu;
+public class MapMenuView extends View {
     
     MapMenuView() {
-        this.menu = "\n"
+        super("\n"
         + "*********************************************************************************\n"
         + "MAP\n"
         + "*********************************************************************************\n\n"
@@ -45,49 +43,12 @@ public class MapMenuView {
         + "M - Mechanic\n"
         + "P - Pizza Parlor\n"
         + "S - Middle School\n"
-        + "B - Back to Game Menu\n"
-        + "*********************************************************************************\n";
+        + "Q - Back to Game Menu\n"
+        + "*********************************************************************************\n");
     }
-    
-    public void displayMenu() {
-        
-      boolean done = false;
-        
-        do {
-            String menuOption = this.getMenuOption();
-            
-            if (menuOption.toUpperCase().equals("B"))
-                return;
-            
-            done = this.doAction(menuOption);
-
-        }while(!done);
-    }
-    
-    private String getMenuOption() {
-        Scanner input = new Scanner(System.in);
-       String menuOption = "";
-       boolean valid = false;
-       
-       while(!valid) {
-           System.out.println("\n" + this.menu);
-           menuOption = input.nextLine();
-           menuOption = menuOption.trim();
-           
-           if (menuOption.length() < 1) {
-               System.out.println("\nInvalid Value: Value cannot be blank.");
-               continue;
-            }
-           else if (menuOption.length() != 1) {
-               System.out.println("\nInvalid Value: Value must be a single character.");
-               continue;
-           }
-          break;        
-       }
-        return menuOption;
-    }
-    
-    private boolean doAction(String choice) {
+  
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch(choice) {

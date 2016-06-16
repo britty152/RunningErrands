@@ -26,7 +26,7 @@ public class ChooseOccupationView {
         + "N - Nurse\n"
         + "H - Hair Dresser\n"
         + "T - Teacher\n"
-        + "B - Back to main menu\n"    
+        + "Q - Back to main menu\n"    
         + "*********************************************************************************\n";
     }
     public void displayView() {
@@ -35,7 +35,7 @@ public class ChooseOccupationView {
         do {
             String menuOption = this.getMenuOption();
             
-            if (menuOption.toUpperCase().equals("B"))
+            if (menuOption.toUpperCase().equals("Q"))
                 return;
             
             done = this.doAction(menuOption);

@@ -41,7 +41,7 @@ public class RunningErrands {
      */
     public static void main(String[] args) {
        StartProgramView object = new StartProgramView(); 
-       object.displayStartProgramView();
+       object.display();
     }
     
 }

@@ -11,27 +11,14 @@ import runningerrands.model.Player;
  *
  * @author brittanyhuntington
  */
-public class StartProgramView {
-   private String promptMessage; 
+public class StartProgramView extends View{
     
     public StartProgramView() {
-        this.promptMessage = "Please enter your name: ";
+        super( "Please enter your name: ");
         this.displayBanner();
    }
     
-    public void displayStartProgramView() {
-        boolean done = false;
-        
-        do {
-            String playersName = this.getPlayersName(); 
-            if (playersName.toUpperCase().equals("Q"))
-                return; 
-  
-            done = this.doAction(playersName);
-        } while (!done);      
-    }
-       
-  
+   
     private void displayBanner() {
         System.out.println("*********************************************************************************\n"
                 + "***********************          RUNNING ERRANDS          ***********************\n"
@@ -47,27 +34,8 @@ public class StartProgramView {
    
     }
 
-    private String getPlayersName() {
-       Scanner input = new Scanner(System.in);
-       String value = "";
-       boolean valid = false;
-       
-       while (!valid) {
-           System.out.println("\n" + this.promptMessage);
-           value = input.nextLine();
-           value = value.trim();
-           
-           if (value.length() < 1) {
-               System.out.println("\nInvalid Value: Value cannot be blank.");
-               continue;
-           }
-           
-           break;
-       }
-       return value;
-    }
-
-    private boolean doAction(String playersName) {
+    @Override
+    public boolean doAction(String playersName) {
         
         if (playersName.length() < 2) {
             System.out.println("\nInvalid Players Name: Name must be greater than one character in length.");
@@ -94,6 +62,6 @@ public class StartProgramView {
         
         MainMenuView mainMenuView = new MainMenuView();
         
-        mainMenuView.displayMainMenuView();
+        mainMenuView.display();
     }
 }

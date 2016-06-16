@@ -13,12 +13,10 @@ import runningerrands.controller.GameControl;
  *
  * @author kburkart
  */
-public class MainMenuView {
+public class MainMenuView extends View {
     
-    private String menu;
-    
-    MainMenuView() {
-        this.menu = "\n"
+    public MainMenuView() {
+        super( "\n"
         + "*********************************************************************************\n"
         + "MAIN MENU\n"
         + "*********************************************************************************\n"
@@ -27,47 +25,12 @@ public class MainMenuView {
         + "H - Get help on how to play the game\n"
         + "S - Save game\n"
         + "Q - Quit \n"    
-        + "*********************************************************************************\n";
+        + "*********************************************************************************\n");
     }
     
-    public void displayMainMenuView() {
-        boolean done = false;
-        
-        do {
-            String menuOption = this.getMenuOption();
-            
-            if (menuOption.toUpperCase().equals("Q"))
-                return;
-            
-            done = this.doAction(menuOption);
 
-        }while(!done);
-    }
-
-    private String getMenuOption() {
-        Scanner input = new Scanner(System.in);
-       String menuOption = "";
-       boolean valid = false;
-       
-       while(!valid) {
-           System.out.println("\n" + this.menu);
-           menuOption = input.nextLine();
-           menuOption = menuOption.trim();
-           
-           if (menuOption.length() < 1) {
-               System.out.println("\nInvalid Value: Value cannot be blank.");
-               continue;
-            }
-           if (menuOption.length() != 1) {
-               System.out.println("\nInvalid Value: Value must be a single character.");
-               continue;
-           }
-          break;        
-       }
-        return menuOption;
-    }
-
-    private boolean doAction(String choice) {
+    @Override
+    public boolean doAction(String choice) {
         choice = choice.toUpperCase();
         
         switch(choice) {
@@ -105,7 +68,7 @@ public class MainMenuView {
 
     private void displayHelpMenu() {
        HelpMenuView helpMenu = new HelpMenuView();
-       helpMenu.displayMenu();
+       helpMenu.display();
     }
 
     private void saveGame() {
