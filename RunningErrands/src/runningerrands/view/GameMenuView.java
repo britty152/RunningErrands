@@ -63,7 +63,7 @@ public class GameMenuView extends View{
 
     private void checkGasTank() {
         CheckGasTankView checkGasTank = new CheckGasTankView();
-        checkGasTank.display(); 
+        checkGasTank.display();
     }
 
     private void displayMapMenu() {

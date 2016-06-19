@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package runningerrands.view;
 /**
  *
@@ -21,7 +17,6 @@ public class CheckGasTankView extends View {
         + "Q - Quit \n"    
         + "*********************************************************************************\n");
     }
-
   @Override
   
     public boolean doAction(String choice) {
