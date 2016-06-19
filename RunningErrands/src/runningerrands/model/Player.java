@@ -19,7 +19,9 @@ public class Player implements Serializable {
     private Location currentLocation;
     private Car car;
     
-    public Player () {}
+    public Player () {
+        accountBalance = 50.00; //all players start out with $50
+    }
 
     public Player(String name, double accountBalance, String job, Location currentLocation, Car car) {
         this.name = name;
