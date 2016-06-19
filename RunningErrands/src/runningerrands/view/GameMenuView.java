@@ -62,7 +62,8 @@ public class GameMenuView extends View{
     }
 
     private void checkGasTank() {
-        System.out.println("Check gas tank stub function called");
+        CheckGasTankView checkGasTank = new CheckGasTankView();
+        checkGasTank.display(); 
     }
 
     private void displayMapMenu() {

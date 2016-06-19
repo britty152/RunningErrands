@@ -101,4 +101,9 @@ public class TravelControl {
             return false; 
         }
     }
+     public int gasInTank (){
+        int gasInTank; 
+        gasInTank = 14;
+        return gasInTank;
+     }
 }
