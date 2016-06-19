@@ -14,7 +14,7 @@ public class CheckGasTankView extends View {
         + "C - Check how much gas is in tank\n"
         + "G - Check how many gallons the tank can hold\n"
         + "H - How to obtain more gas\n"
-        + "Q - Quit \n"    
+        + "Q - Back to Game Menu \n"    
         + "*********************************************************************************\n");
    }
   @Override
