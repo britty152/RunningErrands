@@ -6,7 +6,7 @@ package runningerrands.view;
  */
 public class CheckGasTankView extends View {
 
-   CheckGasTankView(String message) {
+   CheckGasTankView() {
         super ( "\n"
         + "*********************************************************************************\n"
         + "Check Gas Tank\n"
@@ -16,7 +16,7 @@ public class CheckGasTankView extends View {
         + "H - How to obtain more gas\n"
         + "Q - Quit \n"    
         + "*********************************************************************************\n");
-    }
+   }
   @Override
   
     public boolean doAction(String choice) {
@@ -36,10 +36,10 @@ public class CheckGasTankView extends View {
             default:
                 System.out.println("Invalid Selection. Try Again.");
                 break;
+      
         }
-        
         return false; 
-
+        
 }
 private void checkGasInTank() {
        System.out.println("Check Gas In Tank stub function called");
