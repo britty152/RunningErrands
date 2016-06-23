@@ -6,6 +6,7 @@
 package runningerrands.view;
 import java.util.Scanner;
 import runningerrands.RunningErrands;
+import runningerrands.model.Occupation;
 /**
  *
  * @author brittanyhuntington
@@ -74,34 +75,34 @@ public class ChooseOccupationView {
         switch(choice) {
             
             case "J": 
-                RunningErrands.getPlayer().setJob("janitor");
+                RunningErrands.getPlayer().setJob(Occupation.Janitor);
                 return true;
             case "M":
-                RunningErrands.getPlayer().setJob("mail clerk");
+                RunningErrands.getPlayer().setJob(Occupation.MailClerk);
                 return true;
             case "P": 
-                RunningErrands.getPlayer().setJob("pizza deliverer");
+                RunningErrands.getPlayer().setJob(Occupation.PizzaDeliverer);
                 return true;
             case "A":
-                RunningErrands.getPlayer().setJob("auto mechanic");
+                RunningErrands.getPlayer().setJob(Occupation.AutoMechanic);
                 return true;
              case "S":
-                RunningErrands.getPlayer().setJob("secretary");
+                RunningErrands.getPlayer().setJob(Occupation.Secretary);
                 return true;
              case "N":
-                RunningErrands.getPlayer().setJob("nurse");
+                RunningErrands.getPlayer().setJob(Occupation.Nurse);
                 return true;
              case "H":
-                RunningErrands.getPlayer().setJob("hair dresser");
+                RunningErrands.getPlayer().setJob(Occupation.HairDresser);
                 return true;
              case "T":
-                RunningErrands.getPlayer().setJob("teacher");
+                RunningErrands.getPlayer().setJob(Occupation.Teacher);
                 return true;
             default:
                 System.out.println("Invalid Selection. Try Again.");
                 return false;
         }
-
+        
     }
 
     private void displayChooseCarView() {

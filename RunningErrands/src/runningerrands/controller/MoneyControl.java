@@ -13,7 +13,7 @@ import runningerrands.model.Player;
  * @author kburkart
  */
 public class MoneyControl {
-    
+    //TODO change to have enum store wage
     private static final double JANITOR_WAGE = 7.75;
     private static final double MAIL_CLERK_WAGE = 10.75;
     private static final double PIZZA_DELIVERER_WAGE = 7.5;
