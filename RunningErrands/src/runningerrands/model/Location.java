@@ -18,6 +18,7 @@ public class Location implements Serializable {
     private boolean visited;
     private double openingTime;
     private double closingTime;
+    private Scene scene;
 
     public Location(int row, int column, double openingTime, double closingTime) {
         this.row = row;
@@ -25,6 +26,10 @@ public class Location implements Serializable {
         visited = false;
         this.openingTime = openingTime;
         this.closingTime = closingTime;
+    }
+
+    Location() {
+        
     }
    
    public int getRow() {

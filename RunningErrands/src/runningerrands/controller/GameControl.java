@@ -5,19 +5,27 @@
  */
 package runningerrands.controller;
 import runningerrands.RunningErrands;
+import runningerrands.model.Game;
+import runningerrands.model.Map;
 import runningerrands.model.Player;
+import runningerrands.model.Scene;
 
 /**
  *
  * @author kburkart
  */
 public class GameControl {
-    
+  
     public void saveGame (Player player) {
     }
     
     public static void createNewGame(Player player) {
-        System.out.println("Create new game stub function called");
+        Game game = new Game();
+        RunningErrands.setCurrentGame(game);
+        game.setPlayer(player);
+        Map map = TravelControl.createMap();
+        game.setMap(map);
+        TravelControl.movePlayerToStartingPostion(map);
     }
     
     public void initializeMap() {
@@ -41,4 +49,7 @@ public class GameControl {
     public void assignPlayerRole(String role, Player player) {
     }
     
+     static void assignScenesToLocations(Map map, Scene[] scenes) {
+        System.out.println("*** Assign Scenes to Locations stub function called ***");
+    } 
 }
