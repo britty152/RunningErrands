@@ -15,7 +15,7 @@ public class Player implements Serializable {
     
     private String name;
     private double accountBalance;
-    private String job;
+    private Occupation job;
     private Location currentLocation;
     private Car car;
     
@@ -23,7 +23,7 @@ public class Player implements Serializable {
         accountBalance = 50.00; //all players start out with $50
     }
 
-    public Player(String name, double accountBalance, String job, Location currentLocation, Car car) {
+    public Player(String name, double accountBalance, Occupation job, Location currentLocation, Car car) {
         this.name = name;
         this.accountBalance = accountBalance;
         this.job = job;
@@ -47,11 +47,11 @@ public class Player implements Serializable {
         this.accountBalance = accountBalance;
     }
 
-    public String getJob() {
+    public Occupation getJob() {
         return job;
     }
 
-    public void setJob(String job) {
+    public void setJob(Occupation job) {
         this.job = job;
     }
 
