@@ -6,6 +6,10 @@
 package runningerrands.controller;
 
 //import runningerrands.model.Car;
+
+import runningerrands.model.Map;
+import runningerrands.model.Scene;
+
 //import runningerrands.model.Location;
 
 /**
@@ -106,4 +110,21 @@ public class TravelControl {
         gasInTank = 14;
         return gasInTank;
      }
+     
+     public static Map createMap() {
+        Map map = new Map(25, 25);
+        Scene[] scenes = createScenes();
+        GameControl.assignScenesToLocations(map,scenes);
+        return map;
+    }
+     
+     private static Scene[] createScenes() {
+       Scene[] scenes = null;
+       System.out.println("*** Create Scenes stub function called ***");
+       return scenes;
+    }
+     
+    static void movePlayerToStartingPostion(Map map) {
+        System.out.println("*** Move Player To Starting Position stub function called");
+    }
 }

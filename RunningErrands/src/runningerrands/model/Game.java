@@ -14,22 +14,16 @@ import java.util.Objects;
  */
 public class Game implements Serializable {
     
-    private double totalTime;
     private Player player;
     private Map map;
 
     public Game(double totalTime, Player player, Map map) {
-        this.totalTime = totalTime;
         this.player = player;
         this.map = map;
     }
 
-    public double getTotalTime() {
-        return totalTime;
-    }
-
-    public void setTotalTime(double totalTime) {
-        this.totalTime = totalTime;
+    public Game() {
+       
     }
 
     public Player getPlayer() {
@@ -51,7 +45,6 @@ public class Game implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + (int) (Double.doubleToLongBits(this.totalTime) ^ (Double.doubleToLongBits(this.totalTime) >>> 32));
         hash = 53 * hash + Objects.hashCode(this.player);
         hash = 53 * hash + Objects.hashCode(this.map);
         return hash;
@@ -69,9 +62,6 @@ public class Game implements Serializable {
             return false;
         }
         final Game other = (Game) obj;
-        if (Double.doubleToLongBits(this.totalTime) != Double.doubleToLongBits(other.totalTime)) {
-            return false;
-        }
         if (!Objects.equals(this.player, other.player)) {
             return false;
         }
@@ -83,7 +73,7 @@ public class Game implements Serializable {
 
     @Override
     public String toString() {
-        return "Game{" + "totalTime=" + totalTime + ", player=" + player + ", map=" + map + '}';
+        return "Game{" +"player=" + player + ", map=" + map + '}';
     }
       
 }
