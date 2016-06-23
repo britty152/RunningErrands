@@ -58,7 +58,8 @@ public class GameMenuView extends View{
     }
 
     private void checkAccountBalance() {
-        System.out.println("Check account balance stub function called");
+        CheckAccountBalanceView checkAccountBalance = new CheckAccountBalanceView();
+        checkAccountBalance.display();
     }
 
     private void checkGasTank() {

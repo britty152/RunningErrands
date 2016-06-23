@@ -9,7 +9,7 @@ public class CheckGasTankView extends View {
    CheckGasTankView() {
         super ( "\n"
         + "*********************************************************************************\n"
-        + "Check Gas Tank\n"
+        + "CHECK GAS TANK\n"
         + "*********************************************************************************\n"
         + "C - Check how much gas is in tank\n"
         + "G - Check how many gallons the tank can hold\n"
