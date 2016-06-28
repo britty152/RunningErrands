@@ -16,8 +16,9 @@ public enum groceryStoreItems {
         eggs("E", "One dozen eggs.",2.80, "dozen"),
         pasta("P", "One pound of uncooked pasta.", 0.99, "pound"),
         meat("T", "One pound of raw meet.", 4.10, "pound"),
-        snacks("S", "One bag of snacks.", 2.25, "bag"),
-        cheese("C", "One block of cheese", 3.20, "block");
+        cheese("C", "One block of cheese", 3.20, "block"),
+        snacks("S", "One bag of snacks.", 2.25, "bag");
+       
                 
         private final String groceryItem;
         private final String description;
@@ -37,8 +38,7 @@ public enum groceryStoreItems {
             return description;
         }
          public double getCost() {
-             
-             return cost;
+              return cost;
         }
           public String getUnitOfMeasure() {
             return unitOfMeasure;
