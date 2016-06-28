@@ -412,32 +412,4 @@ public class CreateScenes {
             
      return scenes; 
     }
-    
-    public static void assignScenesToLocations (Map map, Scene[] scenes) {
-        location [0][0].setScene(scenes[SceneType.start.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.pizza.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.mechanic.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.hospital.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.elementarySchool.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.middleSchool.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.highSchool.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.hairDresser.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.postOffice.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.home.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.mall.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.groceryStore.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.gasStation.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.bank.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.sportingStore.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.petStore.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.homeImprovementStore.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.ymca.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.church.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.dmv.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.babysitter.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.doctorOffice.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.businessOffice.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.loanOffice.ordinal()]);
-        location [0][0].setScene(scenes[SceneType.finish.ordinal()]);
-    }
 }
