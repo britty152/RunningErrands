@@ -7,6 +7,7 @@ package runningerrands.controller;
 
 //import runningerrands.model.Car;
 
+import exceptions.TravelControlException;
 import runningerrands.model.Map;
 import runningerrands.model.Scene;
 
@@ -24,7 +25,8 @@ public class TravelControl {
     private static final int NUM_OF_ROWS = 25;
     private static final int NUM_OF_COLUMNS = 25;
     
-    public int calculateDistance (int row1, int col1, int row2, int col2) {
+    public int calculateDistance (int row1, int col1, int row2, int col2) 
+            throws TravelControlException {
         int totalDistance;
         if (row1 < 0 || row1 > NUM_OF_ROWS - 1) {
             totalDistance = -1;
@@ -46,7 +48,8 @@ public class TravelControl {
        return totalDistance; 
     }
     
-    public double calculateFuelRequired (double distance, double fuelEfficency) {
+    public double calculateFuelRequired (double distance, double fuelEfficency) 
+        throws TravelControlException {
         double fuelRequired; 
         if (fuelEfficency <= 0) {
             fuelRequired = 0; 
@@ -65,19 +68,21 @@ public class TravelControl {
      * @param timeOfDay
      * @param location
      * @return
+     * @throws exceptions.TravelControlException
      */
-    public boolean isOpen (double timeOfDay, double location) {
-      
+    public boolean isOpen (double timeOfDay, double location)
+                throws TravelControlException {
         if (location > timeOfDay){
-           return false; 
+           throw new TravelControlException("Location is open."); 
        }
        else {
-           return true; 
+           throw new TravelControlException("Location is closed."); 
        }
     }
     
    
-    public double travelTime(double timeOfDay, int distance) {
+    public double travelTime(double timeOfDay, int distance) 
+        throws TravelControlException {
         double time;  //rush hour will be from 1630 to 1800
         if (timeOfDay <= 16.0) {
             time = distance + timeOfDay;
@@ -93,8 +98,8 @@ public class TravelControl {
         }
         
     }
-     public boolean canTravel (boolean isOpen, double travelTime, double openHours) { //this should use travelTime and isOpen to make sure player will get there in time for cloing
-        
+     public boolean canTravel (boolean isOpen, double travelTime, double openHours)  //this should use travelTime and isOpen to make sure player will get there in time for cloing
+        throws TravelControlException {
         if (travelTime <= openHours || isOpen == true) {
             return true;
         }
@@ -105,26 +110,30 @@ public class TravelControl {
             return false; 
         }
     }
-     public int gasInTank (){
+     public int gasInTank ()
+             throws TravelControlException {
         int gasInTank; 
         gasInTank = 14;
         return gasInTank;
      }
      
-     public static Map createMap() {
+     public static Map createMap() 
+             throws TravelControlException {
         Map map = new Map(25, 25);
         Scene[] scenes = createScenes();
         GameControl.assignScenesToLocations(map,scenes);
         return map;
     }
      
-     private static Scene[] createScenes() {
+     private static Scene[] createScenes() 
+             throws TravelControlException {
        Scene[] scenes = null;
        System.out.println("*** Create Scenes stub function called ***");
        return scenes;
     }
      
-    static void movePlayerToStartingPostion(Map map) {
+    static void movePlayerToStartingPostion(Map map) 
+            throws TravelControlException {
         System.out.println("*** Move Player To Starting Position stub function called");
     }
 }
