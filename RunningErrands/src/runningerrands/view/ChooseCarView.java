@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package runningerrands.view;
+import exceptions.runtimeErrors;
 import java.util.Scanner;
 import runningerrands.RunningErrands;
 import runningerrands.model.Car;
@@ -66,8 +67,8 @@ public class ChooseCarView {
         return menuOption;
     }
 
-    private boolean doAction(String choice) {
-      choice = choice.toUpperCase();
+    private boolean doAction(String choice) throws runtimeErrors {
+        choice = choice.toUpperCase();
       Car car = new Car();
       RunningErrands.getPlayer().setCar(car);
         
@@ -89,8 +90,8 @@ public class ChooseCarView {
                 RunningErrands.getPlayer().getCar().setCarName("hybrid");
                 return true;
             default:
-                System.out.println("Invalid Selection. Try Again.");
-                return false;
+                throw new runtimeErrors("Invalid Selection. Try Again"
+                        + "Entry can only be S, C, V, T, or H.");
         }
     }
 
