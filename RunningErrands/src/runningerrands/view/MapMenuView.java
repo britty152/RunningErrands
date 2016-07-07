@@ -66,7 +66,8 @@ public class MapMenuView extends View {
                 //this.displayMapMenu();
                 break;
             default:
-                System.out.println("Invalid Selection. Try Again.");
+                ErrorView.display(this.getClass().getName(),
+                        "Invalid Selection. Try Again.");
                 break;
         }
         

@@ -6,6 +6,7 @@
 package runningerrands.model;
 
 import java.io.Serializable;
+import runningerrands.view.ErrorView;
 
 /**
  *
@@ -19,9 +20,10 @@ public class Map implements Serializable {
 
     public Map(int numRows, int numColumns) {
         if(numRows < 1 || numColumns < 1) {
-            System.out.println("The number of rows and columns must be  greater than zero.");
+            ErrorView.display(this.getClass().getName(),
+                    "Invalid selection.");
             return;
-        }
+     
         this.rowCount = numRows;
         this.columnCount = numColumns;
         this.locations = new Location[numRows][numColumns];

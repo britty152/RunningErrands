@@ -5,7 +5,13 @@
  */
 package runningerrands.view;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import runningerrands.RunningErrands;
 
 /**
  *
@@ -14,6 +20,9 @@ import java.util.Scanner;
 public abstract class View implements ViewInterface {
     
     protected String displayMessage;
+    
+    protected final BufferedReader keyboard = RunningErrands.getInFile();
+    protected final PrintWriter console = RunningErrands.getOutFile();
     
     public View(String message) {
         this.displayMessage = message;
@@ -36,17 +45,22 @@ public abstract class View implements ViewInterface {
 
     @Override
     public String getInput() {
-       Scanner input = new Scanner(System.in);
+      
        String value = null;
        boolean valid = false;
        
        while(!valid) {
            System.out.println("\n" + this.displayMessage);
-           value = input.nextLine();
+           try {
+               value = this.keyboard.readLine();
+           } catch (IOException ex) {
+               Logger.getLogger(View.class.getName()).log(Level.SEVERE, null, ex);
+           }
            value = value.trim();
            
            if (value.length() < 1) {
-               System.out.println("\nInvalid Value: Value cannot be blank.");
+               ErrorView.display(this.getClass().getName(),
+                       "\nInvalid Value: Value cannot be blank.");
                continue;
             }
           break;        

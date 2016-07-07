@@ -34,7 +34,8 @@ public class CheckGasTankView extends View {
                 this.displayGettingGas();
                 break;
             default:
-                System.out.println("Invalid Selection. Try Again.");
+                ErrorView.display(this.getClass().getName(),
+                                  "Invalid Selection. Try Again.");
                 break;
       
         }

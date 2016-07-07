@@ -5,7 +5,6 @@
  */
 package runningerrands.view;
 import exceptions.runtimeErrors;
-import java.util.Scanner;
 import runningerrands.RunningErrands;
 import runningerrands.model.Car;
 /**
@@ -13,7 +12,7 @@ import runningerrands.model.Car;
  * @author brittanyhuntington
  */
 public class ChooseCarView {
-   private String menu;
+   private final String menu;
       
      ChooseCarView() {
         this.menu = "\n"
@@ -28,7 +27,7 @@ public class ChooseCarView {
         + "Q - Back to main menu\n"    
         + "*********************************************************************************\n";
     }
-    public void displayView() {
+    public void displayView() throws runtimeErrors {
         boolean done = false;
         
         do {
@@ -45,21 +44,22 @@ public class ChooseCarView {
     }
 
     private String getMenuOption() {
-       Scanner input = new Scanner(System.in);
        String menuOption = "";
        boolean valid = false;
        
        while(!valid) {
            System.out.println("\n" + this.menu);
-           menuOption = input.nextLine();
+           menuOption = this.keyboard.readLine();
            menuOption = menuOption.trim();
            
            if (menuOption.length() < 1) {
-               System.out.println("\nInvalid Value: Value cannot be blank.");
+               ErrorView.display(this.getClass().getName(),
+                       "\nInvalid Value: Value cannot be blank.");
                continue;
             }
            else if (menuOption.length() != 1) {
-               System.out.println("\nInvalid Value: Value must be a single character.");
+               ErrorView.display(this.getClass().getName(),
+                       "\nInvalid Value: Value must be a single character.");
                continue;
            }
           break;        

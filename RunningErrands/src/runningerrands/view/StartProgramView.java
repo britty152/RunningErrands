@@ -38,14 +38,16 @@ public class StartProgramView extends View{
     public boolean doAction(String playersName) {
         
         if (playersName.length() < 2) {
-            System.out.println("\nInvalid Players Name: Name must be greater than one character in length.");
+            ErrorView.display(this.getClass().getName(),
+                    "\nInvalid Players Name: Name must be greater than one character in length.");
             return false;
         }
         
         Player player = GameControl.createPlayer(playersName);
         
         if (player == null) {
-            System.out.println("\nError creating the player.");
+            ErrorView.display(this.getClass().getName(),
+                    "\nError creating the player.");
             return false;
         }
         

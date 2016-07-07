@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package runningerrands.view;
-import java.util.Scanner;
 import runningerrands.RunningErrands;
 import runningerrands.model.Occupation;
 /**
@@ -12,7 +11,7 @@ import runningerrands.model.Occupation;
  * @author brittanyhuntington
  */
 public class ChooseOccupationView {
-     private String menu;
+     private final String menu;
       
      ChooseOccupationView() {
         this.menu = "\n"
@@ -47,21 +46,22 @@ public class ChooseOccupationView {
     }
 
     private String getMenuOption() {
-       Scanner input = new Scanner(System.in);
        String menuOption = "";
        boolean valid = false;
        
        while(!valid) {
            System.out.println("\n" + this.menu);
-           menuOption = input.nextLine();
+           menuOption = this.keyboard.readLine();
            menuOption = menuOption.trim();
            
            if (menuOption.length() < 1) {
-               System.out.println("\nInvalid Value: Value cannot be blank.");
+               ErrorView.display(this.getClass().getName(),
+                       "\nInvalid Value: Value cannot be blank.");
                continue;
             }
            else if (menuOption.length() != 1) {
-               System.out.println("\nInvalid Value: Value must be a single character.");
+               ErrorView.display(this.getClass().getName(),
+                       "\nInvalid Value: Value must be a single character.");
                continue;
            }
           break;        
@@ -99,7 +99,8 @@ public class ChooseOccupationView {
                 RunningErrands.getPlayer().setJob(Occupation.Teacher);
                 return true;
             default:
-                System.out.println("Invalid Selection. Try Again.");
+                ErrorView.display(this.getClass().getName(),
+                        "Invalid Selection. Try Again.");
                 return false;
         }
         

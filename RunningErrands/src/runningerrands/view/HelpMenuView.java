@@ -45,7 +45,8 @@ public class HelpMenuView extends View {
                 this.displayPurchaseHelp();
                 break;
             default:
-                System.out.println("Invalid Selection. Try Again.");
+                ErrorView.display(this.getClass().getName(),
+                        "Invalid Selection. Try Again.");
                 break;
         }
         

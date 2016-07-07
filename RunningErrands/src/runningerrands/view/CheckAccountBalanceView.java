@@ -36,7 +36,8 @@ public class CheckAccountBalanceView extends View {
                 this.displayAccountBalance();
                 break;
             default:
-                System.out.println("Invalid Selection. Try Again.");
+                ErrorView.display(this.getClass().getName(),
+                        "Invalid Selection. Try Again.");
                 break;
         }
         
@@ -44,6 +45,7 @@ public class CheckAccountBalanceView extends View {
     }
 
     private void displayAccountBalance() {
+        
         System.out.print("\n\nYour account balance is : $");
         System.out.println( String.format( "%.2f", RunningErrands.getPlayer().getAccountBalance()) + "\n" );
     }

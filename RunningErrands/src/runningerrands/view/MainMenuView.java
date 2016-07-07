@@ -5,9 +5,14 @@
  */
 package runningerrands.view;
 
+import exceptions.GameControlException;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.nio.file.Path;
 import java.util.Scanner;
 import runningerrands.RunningErrands;
 import runningerrands.controller.GameControl;
+import runningerrands.model.Game;
 
 /**
  *
@@ -48,7 +53,8 @@ public class MainMenuView extends View {
                 this.saveGame();
                 break;
             default:
-                System.out.println("Invalid Selection. Try Again.");
+               ErrorView.display(this.getClass().getName(),
+                       "Invalid Selection. Try Again.");
                 break;
         }
         
@@ -63,7 +69,15 @@ public class MainMenuView extends View {
     } 
 
     private void startExistingGame() {
-        System.out.println("Start existing game stub function called");
+        this.console.println("\n\nEnter the file path for file where the game is to be saved.");
+        
+        String filePath = this.getInput();
+        
+        try {
+            GameControl.startExistingGame(filePath);
+        }
+        catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
     }
 
     private void displayHelpMenu() {
@@ -72,7 +86,31 @@ public class MainMenuView extends View {
     }
 
     private void saveGame() {
-        System.out.println("Save game stub function called");
+       this.console.println("\n\nEnter the file path for fole where the game "
+                            + "is to be saved.");
+    String filePath = this.getInput();
+        
+    try {
+        
+        GameControl.saveGame(RunningErrands.getCurrentGame(), file Path);
+}
+    catch (Exception ex) {
+        ErrorView.display("MainMenuView", ex.getMessage());
+}
+    public static void saveGame (Game game, String filepath)
+            throws GameControlException {
+        
+    
+        try( FileOutputStream fops = new FileOutputStream(filepath)) {
+            ObjectOutputStream output = new ObjectOutputStream(fops);
+            
+            output.writeObject(game);
+        }
+        catch(Exception e) {
+                throw new GameControlException.getMessage());
+        }
+    }
+}
     }
     
 }

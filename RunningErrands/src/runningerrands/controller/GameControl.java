@@ -4,6 +4,9 @@
  * and open the template in the editor.
  */
 package runningerrands.controller;
+import exceptions.GameControlException;
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
 import runningerrands.RunningErrands;
 import runningerrands.model.Game;
 import runningerrands.model.Map;
@@ -15,6 +18,20 @@ import runningerrands.model.Scene;
  * @author kburkart
  */
 public class GameControl {
+
+    public static void startExistingGame(String filePath) 
+        throws GameControlException {
+        Game game = null;
+        
+        try( FileInputStream fips = new FileInputStream(filepath)) {
+            ObjectInputStream input = new ObjectInputStream(fips);
+            
+            game = (Game) input.readObject();
+        }
+        catch (Exception e) {
+            throw new GameControlException(e.getMessage());
+        }
+    }
   
     public void saveGame (Player player) {
     }
