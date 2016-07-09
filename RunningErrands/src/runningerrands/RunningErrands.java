@@ -72,8 +72,9 @@ public class RunningErrands {
      */
     public static void main(String[] args) {
         try {
+            //TODO: This
             RunningErrands.inFile =
-                   new BuffedReader(New InputStreamReader(System.in));
+                   new InputReader(System.in);
             RunningErrands.outFile = new PrintWriter(System.out, true);
              String filePath = "log.txt";
                 RunningErrands.logFile = new PrintWriter(filePath);
@@ -88,20 +89,16 @@ public class RunningErrands {
             e.printStackTrace();;
         }
         finally {
-            try {
-                if (RunningErrands.inFile !=null)
-                    RunningErrands.inFile.close();
+            //TODO: Fix this
+                //if (RunningErrands.inFile !=null)
+                 //   RunningErrands.inFile.close();
                 
                 if (RunningErrands.outFile !=null)
                     RunningErrands.outFile.close();
                 
                 if (RunningErrands.logFile !=null)
                     RunningErrands.logFile.close();
-            }
-            catch (IOException ex) {
-                System.out.println("Error closing files");
-                return; 
-            }
+            
            
         } 
     }

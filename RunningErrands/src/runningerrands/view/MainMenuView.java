@@ -62,10 +62,14 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
+        try{
         GameControl.createNewGame(RunningErrands.getPlayer());
         
         ChooseOccupationView chooseOccupation = new ChooseOccupationView();
-        chooseOccupation.displayView();
+        chooseOccupation.displayView();}
+        catch (Exception ex) {
+            ErrorView.display("MainMenuView", ex.getMessage());
+        }
     } 
 
     private void startExistingGame() {
@@ -78,6 +82,7 @@ public class MainMenuView extends View {
         }
         catch (Exception ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
+        }
     }
 
     private void displayHelpMenu() {
@@ -91,12 +96,12 @@ public class MainMenuView extends View {
     String filePath = this.getInput();
         
     try {
-        
-        GameControl.saveGame(RunningErrands.getCurrentGame(), file Path);
-}
+            GameControl.saveGame(RunningErrands.getCurrentGame(), filePath);
+        }
     catch (Exception ex) {
         ErrorView.display("MainMenuView", ex.getMessage());
-}
+        }
+    }
     public static void saveGame (Game game, String filepath)
             throws GameControlException {
         
@@ -106,11 +111,8 @@ public class MainMenuView extends View {
             
             output.writeObject(game);
         }
-        catch(Exception e) {
-                throw new GameControlException.getMessage());
+        catch(Exception ex) {
+               ErrorView.display("MainMenuView", ex.getMessage());
         }
     }
-}
-    }
-    
 }

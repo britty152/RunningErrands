@@ -23,6 +23,7 @@ public class Map implements Serializable {
             ErrorView.display(this.getClass().getName(),
                     "Invalid selection.");
             return;
+        }
      
         this.rowCount = numRows;
         this.columnCount = numColumns;
@@ -39,7 +40,6 @@ public class Map implements Serializable {
         }
            
     }
-    
     public int getRowCount() {
         return rowCount;
     }

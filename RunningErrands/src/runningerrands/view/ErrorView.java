@@ -13,19 +13,16 @@ import runningerrands.RunningErrands;
  * @author brittanyhuntington
  */
 public class ErrorView {
-    private static final PrintWriter errorFile = RunningErrands.getOutFile();
-    
-    public static void display(String className, String errorMessage) {
-        
-        errorFile.println(
-                        "--------------------------------------------------"
-                       + "\n--ERROR-- " + errorMessage
-                       + "\n--------------------------------------------------");
-        
-        logFile.pringln(className + " - " +  errorMessage);
-    }
 
-    public static void display(String name, String you_must_enter_a_value) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private static final PrintWriter errorFile = RunningErrands.getOutFile();
+
+    public static void display(String className, String errorMessage) {
+
+        errorFile.println(
+                "--------------------------------------------------"
+                + "\n--ERROR-- " + errorMessage
+                + "\n--------------------------------------------------");
+
+        errorFile.println(className + " - " + errorMessage);
     }
 }

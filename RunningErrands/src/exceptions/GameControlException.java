@@ -9,19 +9,13 @@ package exceptions;
  *
  * @author brittanyhuntington
  */
-public class GameControlException {
+public class GameControlException extends Exception{
 
     public GameControlException() {
     }
 
     public GameControlException(String message) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    public static class getMessage extends Exception {
-
-        public getMessage() {
-        }
-    }
-    
+    }       
+        
 }

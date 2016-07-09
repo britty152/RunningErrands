@@ -5,6 +5,7 @@
  */
 package runningerrands.controller;
 import exceptions.GameControlException;
+import exceptions.TravelControlException;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
 import runningerrands.RunningErrands;
@@ -23,7 +24,7 @@ public class GameControl {
         throws GameControlException {
         Game game = null;
         
-        try( FileInputStream fips = new FileInputStream(filepath)) {
+        try( FileInputStream fips = new FileInputStream(filePath)) {
             ObjectInputStream input = new ObjectInputStream(fips);
             
             game = (Game) input.readObject();
@@ -33,16 +34,20 @@ public class GameControl {
         }
     }
   
-    public void saveGame (Player player) {
+    public static void saveGame (Game game, String filePath) {
+        //TODO: This
     }
     
-    public static void createNewGame(Player player) {
+    public static void createNewGame(Player player)
+        throws TravelControlException
+    {
         Game game = new Game();
         RunningErrands.setCurrentGame(game);
         game.setPlayer(player);
         Map map = TravelControl.createMap();
         game.setMap(map);
         TravelControl.movePlayerToStartingPostion(map);
+
     }
     
     public void initializeMap() {
