@@ -4,14 +4,22 @@
  * and open the template in the editor.
  */
 package runningerrands.view;
+import exceptions.runtimeErrors;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import runningerrands.RunningErrands;
 import runningerrands.model.Occupation;
+
 /**
  *
  * @author brittanyhuntington
  */
 public class ChooseOccupationView {
      private final String menu;
+    private Object keyboard;
       
      ChooseOccupationView() {
         this.menu = "\n"
@@ -29,7 +37,7 @@ public class ChooseOccupationView {
         + "Q - Back to main menu\n"    
         + "*********************************************************************************\n";
     }
-    public void displayView() {
+    public void displayView() throws runtimeErrors {
         boolean done = false;
 
         do {
@@ -51,7 +59,7 @@ public class ChooseOccupationView {
        
        while(!valid) {
            System.out.println("\n" + this.menu);
-           menuOption = this.keyboard.readLine();
+           // fix this menuOption = this.keyboard.readLine();
            menuOption = menuOption.trim();
            
            if (menuOption.length() < 1) {
@@ -70,7 +78,8 @@ public class ChooseOccupationView {
     }
 
     private boolean doAction(String choice) {
-      choice = choice.toUpperCase();
+         
+        choice = choice.toUpperCase();
         
         switch(choice) {
             
@@ -106,7 +115,7 @@ public class ChooseOccupationView {
         
     }
 
-    private void displayChooseCarView() {
+    private void displayChooseCarView() throws runtimeErrors {
         ChooseCarView chooseCar = new ChooseCarView();
         chooseCar.displayView();
     }
