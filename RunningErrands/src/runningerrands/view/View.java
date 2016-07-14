@@ -20,7 +20,7 @@ public abstract class View implements ViewInterface {
     
     protected String displayMessage;
     
-    protected final BufferedReader keyboard = RunningErrands.getInFile();
+    protected final BufferedReader keyboard = RunningErrands.getInfile();
     protected final PrintWriter console = RunningErrands.getOutFile();
     
     public View(String message) {

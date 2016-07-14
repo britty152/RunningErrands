@@ -7,6 +7,7 @@ package runningerrands;
 
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import runningerrands.model.Game;
 import runningerrands.model.Player;
@@ -22,7 +23,7 @@ public class RunningErrands {
     private static Player player = null;
     
     private static PrintWriter outFile = null;
-     private static BuffedReader inFile = null; 
+     private static BufferedReader inFile = null; 
      
      private static PrintWriter logFile = null;
 
@@ -42,13 +43,14 @@ public class RunningErrands {
         RunningErrands.outFile = outFile;
     }
 
-    public static BuffedReader getInfile() {
+    public static BufferedReader getInfile() {
         return inFile;
     }
 
-    public static void setInfile(BuffedReader inFile) {
+    public static void setInfile(BufferedReader inFile) {
         RunningErrands.inFile = inFile;
     }
+    
    
 
     public static Game getCurrentGame() {
@@ -73,8 +75,7 @@ public class RunningErrands {
     public static void main(String[] args) {
         try {
             //TODO: This
-            RunningErrands.inFile =
-                   new InputReader(System.in);
+            RunningErrands.inFile = new BufferedReader(new InputStreamReader(System.in));
             RunningErrands.outFile = new PrintWriter(System.out, true);
              String filePath = "log.txt";
                 RunningErrands.logFile = new PrintWriter(filePath);
@@ -103,16 +104,9 @@ public class RunningErrands {
         } 
     }
 
-    public static BufferedReader getInFile() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+  
 
   
-    private static class BuffedReader {
-
-        public BuffedReader() {
-        }
-    }
-    
 }
+
 

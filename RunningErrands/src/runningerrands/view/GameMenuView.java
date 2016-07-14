@@ -5,12 +5,6 @@
  */
 package runningerrands.view;
 
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-
-
 /**
  *
  * @author kburkart
@@ -25,7 +19,6 @@ public class GameMenuView extends View{
         + "*********************************************************************************\n"
         + "E - Display errands\n"
         + "A - Check account balance\n"
-        + "H - Get high score report"
         + "G - Check gas tank\n"
         + "M - Go to map\n"
         + "Q - Back to main menu \n"    
@@ -50,9 +43,6 @@ public class GameMenuView extends View{
             case "M":
                 this.displayMapMenu();
                 break;
-            case "H":
-                this.highScoreMenu();
-                
             default:
                ErrorView.display(this.getClass().getName(),
                        "Invalid Selection. Try Again.");
@@ -80,7 +70,5 @@ public class GameMenuView extends View{
        MapMenuView mapMenu = new MapMenuView();
        mapMenu.display();
     }
-    private void highScoreMenu(String HighScoreMenu) throws IOException {
-        PrintWriter fout = new PrintWriter(new FileWriter(HighScoreMenu, true));
-    }
+    
 }

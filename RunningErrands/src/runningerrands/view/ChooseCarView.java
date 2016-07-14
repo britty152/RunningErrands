@@ -11,11 +11,11 @@ import runningerrands.model.Car;
  *
  * @author brittanyhuntington
  */
-public class ChooseCarView {
-   private final String menu;
+public class ChooseCarView extends View{
+   private final String menu = "";
       
      ChooseCarView() {
-        this.menu = "\n"
+        super("\n"
         + "*********************************************************************************\n"
         + "Choose your Car.\n"
         + "*********************************************************************************\n"
@@ -25,7 +25,7 @@ public class ChooseCarView {
         + "T - Truck\n"
         + "H - Hybrid\n"
         + "Q - Back to main menu\n"    
-        + "*********************************************************************************\n";
+        + "*********************************************************************************\n");
     }
     public void displayView() throws runtimeErrors {
         boolean done = false;
@@ -49,9 +49,12 @@ public class ChooseCarView {
        
        while(!valid) {
            System.out.println("\n" + this.menu);
+           try {
            menuOption = this.keyboard.readLine();
            menuOption = menuOption.trim();
-           
+           }catch (Exception e) {
+               
+           }
            if (menuOption.length() < 1) {
                ErrorView.display(this.getClass().getName(),
                        "\nInvalid Value: Value cannot be blank.");
@@ -66,8 +69,8 @@ public class ChooseCarView {
        }
         return menuOption;
     }
-
-    private boolean doAction(String choice) throws runtimeErrors {
+    @Override
+    public boolean doAction(String choice)  {
         choice = choice.toUpperCase();
       Car car = new Car();
       RunningErrands.getPlayer().setCar(car);
@@ -90,11 +93,20 @@ public class ChooseCarView {
                 RunningErrands.getPlayer().getCar().setCarName("hybrid");
                 return true;
             default:
-                throw new runtimeErrors("Invalid Selection. Try Again"
-                        + "Entry can only be S, C, V, T, or H.");
+               try { 
+                   this.wrongSelection(); 
+                   } catch (Exception e) {
+                       return false;
+                   }
         }
+        return false;
     }
 
+    public void wrongSelection() throws runtimeErrors {
+        new runtimeErrors("Invalid Selection. Try Again"
+                        + "Entry can only be S, C, V, T, or H.");
+    }
+    
     private void displayGameMenuView() {
         GameMenuView gameMenu = new GameMenuView();
         gameMenu.display();
