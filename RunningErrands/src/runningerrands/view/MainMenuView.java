@@ -6,6 +6,8 @@
 package runningerrands.view;
 
 import exceptions.GameControlException;
+import exceptions.TravelControlException;
+import exceptions.runtimeErrors;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
 import java.nio.file.Path;
@@ -62,14 +64,17 @@ public class MainMenuView extends View {
     }
 
     private void startNewGame() {
-        try{
+        this.console.println("Creating new game...");
+        //No idea what is happening with this. When you hit "N" it goes on a loop forever
+        //saying that the entry cannot be blank.
+        /*try{
         GameControl.createNewGame(RunningErrands.getPlayer());
         
         ChooseOccupationView chooseOccupation = new ChooseOccupationView();
         chooseOccupation.displayView();}
-        catch (Exception ex) {
+        catch (TravelControlException | runtimeErrors ex) {
             ErrorView.display("MainMenuView", ex.getMessage());
-        }
+        } */
     } 
 
     private void startExistingGame() {
